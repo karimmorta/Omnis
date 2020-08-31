@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: Colors.lightGrey,
+    backgroundColor: Colors.lightGray,
     marginVertical: 10
   },
   text: {

@@ -5,24 +5,23 @@ import Colors from '@shared/Colors';
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
+    width: wp('20%'),
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: 20
-  },
-  left: {
-    flexDirection: 'row',
+    backgroundColor: Colors.white,
+    justifyContent: 'center',
     alignItems: 'center'
   },
-  logo: {
-    height: wp('3%'),
-    width: wp('3%'),
-    resizeMode: 'contain',
-    marginRight: 10
+  selectWrap: {
+    flex: 1,
+    backgroundColor: Colors.white,
+    flexDirection: 'column',
+    marginVertical: 10,
+    borderRadius: 5,
+    borderColor: Colors.gray,
+    borderWidth: 1
   },
-  logoText: {
-    fontSize: Fonts.xsmall,
-    color: Colors.black
+  iconContainer: {
+   
   }
 })
 

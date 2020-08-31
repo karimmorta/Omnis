@@ -13,8 +13,8 @@ const SwitchToggle = ({ value, onChange }) => {
       circleSize={30}
       barHeight={30}
       circleBorderWidth={1}
-      circleBorderActiveColor={Colors.lightGrey}
-      circleBorderInactiveColor={Colors.lightGrey}
+      circleBorderActiveColor={Colors.lightGray}
+      circleBorderInactiveColor={Colors.lightGray}
       backgroundActive={'green'}
       backgroundInactive={'gray'}
       circleActiveColor={'#fff'}
@@ -22,7 +22,7 @@ const SwitchToggle = ({ value, onChange }) => {
       changeValueImmediately={true}
       renderInsideCircle={() => {}} // custom component to render inside the Switch circle (Text, Image, etc.)
       changeValueImmediately={true} // if rendering inside circle, change state immediately or wait for animation to complete
-      innerCircleStyle={{ alignItems: "center", justifyContent: "center", borderColor: Colors.lightGrey }} // style for inner animated circle for what you (may) be rendering inside the circle
+      innerCircleStyle={{ alignItems: "center", justifyContent: "center", borderColor: Colors.lightGray }} // style for inner animated circle for what you (may) be rendering inside the circle
       outerCircleStyle={{}} // style for outer animated circle
       renderActiveText={false}
       renderInActiveText={false}

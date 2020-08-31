@@ -4,25 +4,26 @@ import Fonts from '@shared/Fonts';
 import Colors from '@shared/Colors';
 
 const styles = StyleSheet.create({
-  container: {
-    width: '100%',
+  formWrap: {
+    flexDirection: 'row',
+    paddingHorizontal: wp('3%'),
+    marginTop: 30
+  },
+  form: {
+    flex: 1
+  },
+  labelForm: {
+    width: wp('14%'),
     flexDirection: 'row',
     justifyContent: 'space-between',
-    padding: 20
+    marginBottom: 5
   },
-  left: {
-    flexDirection: 'row',
-    alignItems: 'center'
+  labelText: {
+    fontSize: Fonts.small,
+    color: Colors.gray
   },
-  logo: {
-    height: wp('3%'),
-    width: wp('3%'),
-    resizeMode: 'contain',
-    marginRight: 10
-  },
-  logoText: {
-    fontSize: Fonts.xsmall,
-    color: Colors.black
+  buttonWrap: {
+    alignItems: 'center',
   }
 })
 

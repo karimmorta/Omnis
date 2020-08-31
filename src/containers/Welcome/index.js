@@ -9,7 +9,6 @@ import Styles from '@shared/Styles';
 
 const Welcome = ({ navigation }) => {
   const onTapOption = useCallback((routeName) => {
-    console.log({ navigation, routeName })
     navigation.navigate(routeName)
   }, [navigation]);
 

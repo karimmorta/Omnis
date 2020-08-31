@@ -5,6 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Welcome from '@containers/Welcome';
 import Devices from '@containers/Devices';
 import DeviceDetail from '@containers/DeviceDetail';
+import Settings from '@containers/Settings';
 
 const Stack = createStackNavigator();
 function DeviceStack() {
@@ -20,6 +21,10 @@ function DeviceStack() {
       <Stack.Screen
         name="DeviceDetail"
         component={DeviceDetail}
+      />
+      <Stack.Screen
+        name="Settings"
+        component={Settings}
       />
     </Stack.Navigator>
   );

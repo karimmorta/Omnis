@@ -5,24 +5,18 @@ import Colors from '@shared/Colors';
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: 20
+    width: wp('13%'),
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: Colors.gray,
+    backgroundColor: Colors.lightGray,
+    paddingVertical: 5
   },
-  left: {
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-  logo: {
-    height: wp('3%'),
-    width: wp('3%'),
-    resizeMode: 'contain',
-    marginRight: 10
-  },
-  logoText: {
+  text: {
     fontSize: Fonts.xsmall,
-    color: Colors.black
+    color: Colors.text
   }
 })
 

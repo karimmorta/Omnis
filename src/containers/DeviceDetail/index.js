@@ -11,8 +11,7 @@ const DeviceDetail = ({ navigation, route }) => {
   const [value, setValue] = useState(true)
   const id = useMemo(() => route.params.id, [route])
   const onTapOption = useCallback((routeName) => {
-    console.log({ navigation, routeName })
-    navigation.navigate(routeName)
+    navigation.navigate(routeName, { id })
   }, [navigation]);
 
   return (
@@ -27,10 +26,10 @@ const DeviceDetail = ({ navigation, route }) => {
         <SwitchToggle value={value} onChange={() => setValue(!value)} />
        </View>
        <View style={styles.optionWrap}>
-         <TouchableOpacity style={styles.option} activeOpacity={0.5} onPress={() => onTapOption('Device')}>
+         <TouchableOpacity style={styles.option} activeOpacity={0.5} onPress={() => onTapOption('Settings')}>
            <Text style={styles.optionText}>EDITOR</Text>
          </TouchableOpacity>
-         <TouchableOpacity style={styles.option} activeOpacity={0.5} onPress={() => onTapOption('Device')}>
+         <TouchableOpacity style={styles.option} activeOpacity={0.5} onPress={() => onTapOption('Settings')}>
            <Text style={styles.optionText}>SETTINGS</Text>
          </TouchableOpacity>
        </View>

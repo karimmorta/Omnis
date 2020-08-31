@@ -9,7 +9,7 @@
 import React, { useEffect } from 'react';
 import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-console.disableYellowBox = true;
+
 import RootStack from './src/navigation/RootStack';
 
 

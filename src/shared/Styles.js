@@ -16,6 +16,14 @@ const Styles = StyleSheet.create({
     fontSize: Fonts.large,
     color: Colors.black
   },
+  formTitle: {
+    color: Colors.gray,
+    fontSize: Fonts.medium,
+    marginBottom: 20
+  },
+  inputWrap: {
+    marginBottom: 10
+  },
 })
 
 export default Styles;

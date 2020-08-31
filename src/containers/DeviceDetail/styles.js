@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: wp('5%'),
-    backgroundColor: Colors.lightGrey
+    backgroundColor: Colors.lightGray
   },
   optionText: {
     fontSize: Fonts.xlarge,
