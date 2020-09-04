@@ -7,6 +7,9 @@ import Devices from '@containers/Devices';
 import DeviceDetail from '@containers/DeviceDetail';
 import Settings from '@containers/Settings';
 import Editor from '@containers/Editor';
+import Scenarios from '@containers/Scenarios';
+import SocialScenario from '@containers/SocialScenario';
+import SocialStatus from '@containers/SocialStatus';
 
 const Stack = createStackNavigator();
 function DeviceStack() {
@@ -34,6 +37,29 @@ function DeviceStack() {
     </Stack.Navigator>
   );
 }
+
+function ScenarioStack() {
+  return (
+    <Stack.Navigator
+      initialRouteName="Scenarios"
+      headerMode="none"
+      screenOptions={{animationEnabled: false}}>
+      <Stack.Screen
+        name="Scenarios"
+        component={Scenarios}
+      />
+      <Stack.Screen
+        name="SocialScenario"
+        component={SocialScenario}
+      />
+      <Stack.Screen
+        name="SocialStatus"
+        component={SocialStatus}
+      />
+  </Stack.Navigator>
+  )
+}
+
 export default function RootStack() {
   return (
     <Stack.Navigator
@@ -47,6 +73,10 @@ export default function RootStack() {
       <Stack.Screen
         name="Device"
         component={DeviceStack}
+      />
+      <Stack.Screen
+        name="Scenario"
+        component={ScenarioStack}
       />
     </Stack.Navigator>
   );

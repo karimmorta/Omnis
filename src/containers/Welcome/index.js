@@ -24,7 +24,7 @@ const Welcome = ({ navigation }) => {
          <TouchableOpacity style={styles.option} activeOpacity={0.5} onPress={() => onTapOption('Device')}>
            <Text style={styles.optionText}>DEVICES</Text>
          </TouchableOpacity>
-         <TouchableOpacity style={styles.option} activeOpacity={0.5} onPress={() => onTapOption('Device')}>
+         <TouchableOpacity style={styles.option} activeOpacity={0.5} onPress={() => onTapOption('Scenario')}>
            <Text style={styles.optionText}>SCENARIOS</Text>
          </TouchableOpacity>
        </View>
