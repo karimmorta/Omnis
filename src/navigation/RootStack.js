@@ -8,8 +8,15 @@ import DeviceDetail from '@containers/DeviceDetail';
 import Settings from '@containers/Settings';
 import Editor from '@containers/Editor';
 import Scenarios from '@containers/Scenarios';
+import GridSelect from '@containers/GridSelect';
+import GridScenario from '@containers/GridScenario';
 import SocialScenario from '@containers/SocialScenario';
 import SocialStatus from '@containers/SocialStatus';
+import CrowdAlert from '@containers/CrowdAlert';
+import CrowdStatus from '@containers/CrowdStatus';
+import FeverIndicator from '@containers/FeverIndicator';
+import FeverResult from '@containers/FeverResult';
+import Overview from '@containers/Overview';
 
 const Stack = createStackNavigator();
 function DeviceStack() {
@@ -37,7 +44,6 @@ function DeviceStack() {
     </Stack.Navigator>
   );
 }
-
 function ScenarioStack() {
   return (
     <Stack.Navigator
@@ -49,6 +55,14 @@ function ScenarioStack() {
         component={Scenarios}
       />
       <Stack.Screen
+        name="GridSelect"
+        component={GridSelect}
+      />
+      <Stack.Screen
+        name="GridScenario"
+        component={GridScenario}
+      />
+      <Stack.Screen
         name="SocialScenario"
         component={SocialScenario}
       />
@@ -56,10 +70,29 @@ function ScenarioStack() {
         name="SocialStatus"
         component={SocialStatus}
       />
-  </Stack.Navigator>
-  )
+      <Stack.Screen
+        name="CrowdAlert"
+        component={CrowdAlert}
+      />
+      <Stack.Screen
+        name="CrowdStatus"
+        component={CrowdStatus}
+      />
+      <Stack.Screen
+        name="FeverIndicator"
+        component={FeverIndicator}
+      />
+      <Stack.Screen
+        name="FeverResult"
+        component={FeverResult}
+      />
+      <Stack.Screen
+        name="Overview"
+        component={Overview}
+      />
+    </Stack.Navigator>
+  );
 }
-
 export default function RootStack() {
   return (
     <Stack.Navigator
