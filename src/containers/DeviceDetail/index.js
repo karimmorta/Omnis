@@ -26,7 +26,7 @@ const DeviceDetail = ({ navigation, route }) => {
         <SwitchToggle value={value} onChange={() => setValue(!value)} />
        </View>
        <View style={styles.optionWrap}>
-         <TouchableOpacity style={styles.option} activeOpacity={0.5} onPress={() => onTapOption('Settings')}>
+         <TouchableOpacity style={styles.option} activeOpacity={0.5} onPress={() => onTapOption('Editor')}>
            <Text style={styles.optionText}>EDITOR</Text>
          </TouchableOpacity>
          <TouchableOpacity style={styles.option} activeOpacity={0.5} onPress={() => onTapOption('Settings')}>

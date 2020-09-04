@@ -6,6 +6,7 @@ const Fonts = {
   medium: hp('3%'),
   large: hp('4%'),
   xlarge: hp('4%'),
+  xxlarge: hp('12%'),
 }
 
 export default Fonts;

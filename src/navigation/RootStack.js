@@ -6,6 +6,7 @@ import Welcome from '@containers/Welcome';
 import Devices from '@containers/Devices';
 import DeviceDetail from '@containers/DeviceDetail';
 import Settings from '@containers/Settings';
+import Editor from '@containers/Editor';
 
 const Stack = createStackNavigator();
 function DeviceStack() {
@@ -25,6 +26,10 @@ function DeviceStack() {
       <Stack.Screen
         name="Settings"
         component={Settings}
+      />
+      <Stack.Screen
+        name="Editor"
+        component={Editor}
       />
     </Stack.Navigator>
   );

@@ -1,10 +1,11 @@
 import React from 'react';
-import { Switch } from 'react-native-switch';
+import { Switch } from 'react-native';
 import Colors from '@shared/Colors';
 
 const SwitchToggle = ({ value, onChange }) => {
   return (
     <Switch
+      useNativeDriver={true}
       value={value}
       onValueChange={onChange}
       disabled={false}
