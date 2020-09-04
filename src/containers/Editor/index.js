@@ -154,7 +154,7 @@ const Editor = ({ navigation, route }) => {
   }
 
   return (
-   <View style={styles.container}>
+   <ScrollView style={styles.container}>
      <AppHeader isBack={true} />
       <View style={[Styles.titleWrap, { marginTop: hp('4%')}]}>
         <Text style={[Styles.titleText, Styles.fontBold]}>EDITOR</Text>
@@ -217,7 +217,7 @@ const Editor = ({ navigation, route }) => {
           />
        </View>
      </View>
-   </View>
+   </ScrollView>
   );
 };
 
