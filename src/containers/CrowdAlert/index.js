@@ -1,9 +1,8 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Text, View, ScrollView
 } from 'react-native';
 import AppHeader from '@components/AppHeader';
-import DropdownPicker from '@components/DropdownPicker';
 import FormLabel from '@components/FormLabel';
 import Button from '@components/Button';
 
@@ -11,7 +10,7 @@ import Styles from '@shared/Styles';
 import styles from './styles';
 import Input from '@components/Input';
 
-const CrowdAlert = ({ navigation, route }) => {
+const CrowdAlert = ({ navigation }) => {
   const [people, setPeople] = useState(15)
   return (
    <View style={styles.container}>
@@ -34,7 +33,7 @@ const CrowdAlert = ({ navigation, route }) => {
         </View>
         <View style={styles.textWrap}>
           <FormLabel label="Max. people allowed:" />
-          <Input size='large' value={people} type="numeric" onChange={value => setPeople(value)} />
+          <Input size='large' value={`${people}`} type="numeric" onChange={value => setPeople(value)} />
         </View>
         <View style={styles.buttonWrap}>
           <Button size='large' label='START' onClick={() => navigation.navigate('CrowdStatus')} />

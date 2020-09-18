@@ -1,20 +1,13 @@
-import React, { useMemo, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
-  Text, View, Dimensions
+  Text, View, Dimensions, ScrollView
 } from 'react-native';
-import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import AppHeader from '@components/AppHeader';
-import Styles from '@shared/Styles';
 import styles from './styles';
-import { ScrollView } from 'react-native-gesture-handler';
 import Square from '@components/Square';
-import Switch from '@components/Switch';
-import Colors from '@shared/Colors';
-import IconButton from '@components/IconButton';
 import DropdownPicker from '@components/DropdownPicker';
 
 const { width } = Dimensions.get('window');
-const sideWidth = width / 4
 const squareWrapWidth = width / 2
 const squareWidth = width / 16
 
@@ -76,15 +69,15 @@ const Overview = () => {
         </ScrollView>
        </View>
        <View style={styles.rightWrap}>
-          <Text style={styles.title}>{"COMBINED SUMMARY"}</Text>
+          <Text style={styles.title}>{"COMBINDED SUMMARY"}</Text>
           <View style={styles.summaryWrap}>
             <View style={styles.summary}>
               <Text style={styles.summaryTitle}>{"ALERT!"}</Text>
               <Text style={styles.summaryText}>{"THIS ROOM IS\nOVERCROWDED!"}</Text>
-            </View>
+            </View> 
             <View style={[styles.summary, { backgroundColor: '#33CC00'}]}>
               <Text style={[styles.summaryText, { color: '#009900'}]}>{"SOCIAL DISTANCE\nIS SATISFIED!"}</Text>
-            </View>
+            </View> 
           </View>
        </View>
      </View>

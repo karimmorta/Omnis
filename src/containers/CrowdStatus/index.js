@@ -1,9 +1,9 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import {
-  Text, View, Image, TouchableOpacity
+  Text, View, TouchableOpacity
 } from 'react-native';
-import { heightPercentageToDP } from 'react-native-responsive-screen';
-import Images from '@shared/Images';
+import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { Entypo } from '@expo/vector-icons';
 import styles from './styles';
 
 const CrowdStatus = ({ navigation }) => {
@@ -23,8 +23,8 @@ const CrowdStatus = ({ navigation }) => {
     status
   ])
   const icon = useMemo(() => {
-    if (status === 'okay') return 'satisfyGreen'
-    if (status === 'full') return 'noSatisfyRed'
+    if (status === 'okay') return 'emoji-happy'
+    if (status === 'full') return 'emoji-neutral'
     if (status === 'alert') return ''
   }, [
     status
@@ -50,9 +50,9 @@ const CrowdStatus = ({ navigation }) => {
   return (
    <View style={styles.container}>
      <TouchableOpacity style={[styles.content, { backgroundColor }]} activeOpacity={0.5} onPress={onTapScreen}>
-       {status === 'alert' && <Text style={[styles.text, { color: 'white', marginBottom: heightPercentageToDP('10%') }]}>ALERT!</Text>}
+       {status === 'alert' && <Text style={[styles.text, { color: 'white', marginBottom: hp('10%') }]}>ALERT!</Text>}
        <Text style={[styles.text, { color: fontColor }]}>{statusText}</Text>
-       {!!icon && <Image source={Images[icon]} style={styles.icon} />}
+       {!!icon && <Entypo name={icon} size={hp('35%')} style={[styles.icon, { color: fontColor }]} />}
      </TouchableOpacity>
    </View>
   );

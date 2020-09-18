@@ -1,20 +1,19 @@
-import React, { useMemo, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
-  Text, View,TouchableOpacity
+  Text, View, ScrollView
 } from 'react-native';
-import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import AppHeader from '@components/AppHeader';
-import Styles from '@shared/Styles';
 import styles from './styles';
-import { ScrollView } from 'react-native-gesture-handler';
 import Square from '@components/Square';
 import Switch from '@components/Switch';
 import Colors from '@shared/Colors';
-import IconButton from '@components/IconButton';
 
 const lastLineIndex = 56
 const GridScenario = ({ navigation, route }) => {
   const [squares, setSquares] = useState([])
+  const [layers, setLayers] = useState({})
+
+  // useEffect
   useEffect(() => {
     const _squares = []
     for(let i = 0; i < 64; i++) {
@@ -33,23 +32,23 @@ const GridScenario = ({ navigation, route }) => {
            </View>
            <View style={[styles.option, { borderTopWidth: 1, borderColor: Colors.gray}]}>
              <Text style={styles.optionText}>Square numbers</Text>
-             <Switch value={true} />
+             <Switch value={layers.square} onChange={() => setLayers({ ...layers, square: !layers.square})} />
            </View>
            <View style={[styles.option, { borderTopWidth: 1, borderColor: Colors.gray}]}>
              <Text style={styles.optionText}>Temperatures</Text>
-             <Switch value={false} />
+             <Switch value={layers.temperatures} onChange={() => setLayers({ ...layers, temperatures: !layers.temperatures})} />
            </View>
            <View style={[styles.option, { borderTopWidth: 1, borderColor: Colors.gray}]}>
              <Text style={styles.optionText}>Lines</Text>
-             <Switch value={true} />
+             <Switch value={layers.lines} onChange={() => setLayers({ ...layers, lines: !layers.lines})} />
            </View>
            <View style={[styles.option, { borderTopWidth: 1, borderColor: Colors.gray}]}>
              <Text style={styles.optionText}>Scopes</Text>
-             <Switch value={true} />
+             <Switch value={layers.scropes} onChange={() => setLayers({ ...layers, scropes: !layers.scropes})} />
            </View>
            <View style={[styles.option, { borderTopWidth: 1, borderColor: Colors.gray}]}>
              <Text style={styles.optionText}>People</Text>
-             <Switch value={true} />
+             <Switch value={layers.people} onChange={() => setLayers({ ...layers, people: !layers.people})} />
            </View>
          </View>
        </View>
@@ -74,7 +73,7 @@ const GridScenario = ({ navigation, route }) => {
             <Text style={styles.optionText}>Matrix:</Text>
             <Text style={styles.optionText}>7</Text>
           </View>
-          <View style={[styles.option, { borderTopWidth: 2, borderColor: Colors.gray}]}>
+          <View style={[styles.option, { borderTopWidth: 1, borderColor: Colors.gray}]}>
             <Text style={styles.optionText}>Table 4:</Text>
             <Text style={styles.optionText}>0</Text>
           </View>
@@ -86,7 +85,7 @@ const GridScenario = ({ navigation, route }) => {
             <Text style={styles.optionText}>Table 6:</Text>
             <Text style={styles.optionText}>2</Text>
           </View>
-          <View style={[styles.option, { borderTopWidth: 1, borderBottomWidth: 1, borderColor: Colors.gray}]}>
+          <View style={[styles.option, { borderTopWidth: 1, borderColor: Colors.gray}]}>
             <Text style={styles.optionText}>Table 7:</Text>
             <Text style={styles.optionText}>3</Text>
           </View>

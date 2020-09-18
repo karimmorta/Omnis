@@ -1,14 +1,12 @@
 import React from 'react';
-import { Text, TouchableOpacity, Image } from 'react-native';
-import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
-import Fonts from '@shared/Fonts';
-import Images from '@shared/Images';
+import { TouchableOpacity } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import styles from './styles';
 
 const IconButton = ({ icon, onClick }) => {
   return (
     <TouchableOpacity style={[styles.container]} activeOpacity={0.5} onPress={onClick}>
-      <Image source={Images[icon]} style={styles.icon} />
+      <MaterialCommunityIcons name={icon} size={24} />
     </TouchableOpacity>
   )
 }

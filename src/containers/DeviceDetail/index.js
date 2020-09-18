@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import {
-  Text, View,TouchableOpacity, Switch
+  Text, View,TouchableOpacity
 } from 'react-native';
 import AppHeader from '@components/AppHeader';
 import SwitchToggle from '@components/Switch';

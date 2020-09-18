@@ -1,13 +1,10 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import {
-  Text, View, Image, TouchableOpacity
+  Text, View, TouchableOpacity
 } from 'react-native';
-import AppHeader from '@components/AppHeader';
-import Device from '@components/Device';
-import Styles from '@shared/Styles';
+import { Entypo } from '@expo/vector-icons';
+import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import styles from './styles';
-import Images from '@shared/Images';
-import { heightPercentageToDP } from 'react-native-responsive-screen';
 
 const SocialStatus = ({ navigation }) => {
   const [status, setStatus] = useState('satisfied')
@@ -26,8 +23,8 @@ const SocialStatus = ({ navigation }) => {
     status
   ])
   const icon = useMemo(() => {
-    if (status === 'satisfied') return 'satisfyGreen'
-    if (status === 'nosatisfied') return 'noSatisfyRed'
+    if (status === 'satisfied') return 'emoji-happy'
+    if (status === 'nosatisfied') return 'emoji-neutral'
     if (status === 'alert') return ''
   }, [
     status
@@ -53,9 +50,9 @@ const SocialStatus = ({ navigation }) => {
   return (
    <View style={styles.container}>
      <TouchableOpacity style={[styles.content, { backgroundColor }]} activeOpacity={0.5} onPress={onTapScreen}>
-       {status === 'alert' && <Text style={[styles.text, { color: 'white', marginBottom: heightPercentageToDP('10%') }]}>ALERT!</Text>}
+       {status === 'alert' && <Text style={[styles.text, { color: 'white', marginBottom: hp('10%') }]}>ALERT!</Text>}
        <Text style={[styles.text, { color: fontColor }]}>{statusText}</Text>
-       {!!icon && <Image source={Images[icon]} style={styles.icon} />}
+       {!!icon && <Entypo name={icon} size={hp('35%')} style={[styles.icon, { color: fontColor }]} />}
      </TouchableOpacity>
    </View>
   );

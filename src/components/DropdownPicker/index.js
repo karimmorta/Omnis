@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select'
 import { Ionicons } from '@expo/vector-icons';
 import Fonts from '@shared/Fonts';
@@ -22,8 +22,8 @@ const DropdownPicker = props => {
           style={{
             ...pickerSelectStyles,
             iconContainer: {
-              top: -1,
-              bottom: 1,
+              top: 0,
+              bottom: 0,
               right: 1,
               backgroundColor: Colors.lightGray,
               paddingHorizontal: 15,
@@ -39,7 +39,7 @@ const DropdownPicker = props => {
           }}
           value={value}
           useNativeAndroidPickerStyle={false}
-          Icon={() => <Ionicons name="ios-arrow-down" size={24} color={Colors.black} />}
+          Icon={() => <Ionicons name="ios-arrow-down" size={18} color={Colors.black} />}
           textInputProps={{
             selection: { start: 0 }
           }}
@@ -53,7 +53,7 @@ const DropdownPicker = props => {
 const pickerSelectStyles = StyleSheet.create({
   inputIOS: {
     fontSize: Fonts.small,
-    paddingVertical: 12,
+    paddingVertical: 0,
     paddingHorizontal: 10,
     borderRadius: 10,
     borderWidth: 0,
@@ -62,7 +62,7 @@ const pickerSelectStyles = StyleSheet.create({
   },
   inputAndroid: {
     fontSize: Fonts.small,
-    paddingVertical: 5,
+    paddingVertical: 0,
     paddingHorizontal: 10,
     borderRadius: 10,
     borderWidth: 0,

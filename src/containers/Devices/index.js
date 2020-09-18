@@ -1,6 +1,6 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import {
-  Text, View,TouchableOpacity
+  Text, View
 } from 'react-native';
 import AppHeader from '@components/AppHeader';
 import Device from '@components/Device';
@@ -8,9 +8,9 @@ import Styles from '@shared/Styles';
 import styles from './styles';
 
 const devices = [
-  { id: '00:80:41:ae:fd:7e', type: 'ble' },
-  { id: '00:80:41:ae:fd:7e', type: 'device1' },
-  { id: '00:80:41:ae:fd:7e', type: 'device1' },
+  { id: '00:80:41:ae:fd:7e', type: 'md-bluetooth' },
+  { id: '00:80:41:ae:fd:7e', type: 'md-link' },
+  { id: '00:80:41:ae:fd:7e', type: 'md-link' },
 ]
 
 const Devices = () => {

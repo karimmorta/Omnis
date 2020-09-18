@@ -1,13 +1,10 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import {
-  Text, View, Image, TouchableOpacity
+  Text, View, TouchableOpacity
 } from 'react-native';
-import AppHeader from '@components/AppHeader';
-import Device from '@components/Device';
-import Styles from '@shared/Styles';
+import { Entypo } from '@expo/vector-icons';
+import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import styles from './styles';
-import Images from '@shared/Images';
-import { heightPercentageToDP } from 'react-native-responsive-screen';
 
 const FeverResult = ({ navigation }) => {
   const [status, setStatus] = useState('close')
@@ -43,8 +40,8 @@ const FeverResult = ({ navigation }) => {
     if (status === 'close') return null
     if (status === 'far') return null
     if (status === 'wait') return <Text style={styles.resultText}>{"PLEASE\nWAIT"}</Text>
-    if (status === 'nofever') return <Image source={Images.satisfyWhite} style={styles.icon} />
-    if (status === 'fever') return <Image source={Images.noSatisfyWhite} style={styles.icon} />
+    if (status === 'nofever') return <Entypo name='emoji-happy' size={wp('22%')} style={[styles.icon]} />
+    if (status === 'fever') return <Entypo name='emoji-sad' size={wp('22%')} style={[styles.icon]} />
   }, [
     status
   ])

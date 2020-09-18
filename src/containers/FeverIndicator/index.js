@@ -1,9 +1,8 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Text, View, ScrollView
 } from 'react-native';
 import AppHeader from '@components/AppHeader';
-import DropdownPicker from '@components/DropdownPicker';
 import FormLabel from '@components/FormLabel';
 import Button from '@components/Button';
 
@@ -19,7 +18,7 @@ const FeverIndicator = ({ navigation, route }) => {
      <View style={styles.content}>
        <ScrollView>
         <View style={Styles.titleWrap}>
-          <Text style={[Styles.titleText, Styles.fontBold]}>CROWD ALERT</Text>
+          <Text style={[Styles.titleText, Styles.fontBold]}>FEVER INDICATOR</Text>
           <Text style={Styles.titleText}>SCENARIO</Text>
         </View>
         <View style={[styles.textWrap, { marginTop: 50 }]}>
@@ -34,7 +33,7 @@ const FeverIndicator = ({ navigation, route }) => {
         </View>
         <View style={styles.textWrap}>
           <FormLabel label="Suspicious min. temperature:" />
-          <Input size='large' value={temperature} type="numeric" onChange={value => setTemperature(value)} />
+          <Input size='large' decimal value={`${temperature}`} type="numeric" onChange={value => setTemperature(value)} />
         </View>
         <View style={styles.buttonWrap}>
           <Button size='large' label='START' onClick={() => navigation.navigate('FeverResult')} />

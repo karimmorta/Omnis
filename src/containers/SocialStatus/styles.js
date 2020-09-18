@@ -21,8 +21,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   icon: {
-    marginTop: hp('10%'),
-    resizeMode: 'contain'
+    marginTop: hp('10%')
   }
 })
 

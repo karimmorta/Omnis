@@ -1,10 +1,8 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Text, View, ScrollView
 } from 'react-native';
 import AppHeader from '@components/AppHeader';
-import DropdownPicker from '@components/DropdownPicker';
-import FormLabel from '@components/FormLabel';
 import Button from '@components/Button';
 
 import Styles from '@shared/Styles';

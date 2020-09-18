@@ -3,9 +3,8 @@ import {
   Text, View,TouchableOpacity
 } from 'react-native';
 import AppHeader from '@components/AppHeader';
-import styles from './styles';
 import Styles from '@shared/Styles';
-
+import styles from './styles';
 
 const Welcome = ({ navigation }) => {
   const onTapOption = useCallback((routeName) => {

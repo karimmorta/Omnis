@@ -3,7 +3,6 @@ import {
   Text, View,ScrollView, TouchableOpacity
 } from 'react-native';
 import AppHeader from '@components/AppHeader';
-import Device from '@components/Device';
 import Styles from '@shared/Styles';
 import styles from './styles';
 

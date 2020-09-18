@@ -21,9 +21,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   icon: {
-    width: wp('22%'),
-    height: wp('22%'),
-    resizeMode: 'contain'
+    color: Colors.white
   },
   sideWrap: {
     flex: 1,

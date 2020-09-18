@@ -9,7 +9,8 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white
   },
   content: {
-    flex: 1
+    flex: 1,
+    marginBottom: 50
   },
   pickerWrap: {
     alignItems: 'center',

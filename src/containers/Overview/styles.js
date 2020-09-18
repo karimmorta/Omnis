@@ -4,7 +4,6 @@ import Fonts from '@shared/Fonts';
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 const { width } = Dimensions.get('window');
-const sideWidth = width / 4
 const squareWrapWidth = width / 2
 
 const styles = StyleSheet.create({

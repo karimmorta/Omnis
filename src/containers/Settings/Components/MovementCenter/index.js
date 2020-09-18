@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Text, View
 } from 'react-native';
@@ -9,6 +9,8 @@ import Button from '@components/Button';
 import styles from './styles';
 
 const MovementCenter = () => {
+  const [values, setValues] = useState({})
+
   return (
     <View style={styles.container}>
       <View style={styles.form}>
@@ -16,11 +18,11 @@ const MovementCenter = () => {
           <FormLabel label='Object detection threshold' />
           <View style={styles.labelForm}>
             <Text style={styles.labelText}>Min:</Text>
-            <Input unit='cm' />
+            <Input unit='cm' type='numeric' value={values.minHeight} onChange={value => setValues({...values, minHeight: value})} />
           </View>
           <View style={styles.labelForm}>
             <Text style={styles.labelText}>Max:</Text>
-            <Input unit='cm' />
+            <Input unit='cm' type='numeric' value={values.maxHeight} onChange={value => setValues({...values, maxHeight: value})} />
           </View>
         </View>
       </View>
