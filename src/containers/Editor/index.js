@@ -4,6 +4,8 @@ import {
 } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import DropdownPicker from '@components/DropdownPicker';
+import FormLabel from '@components/FormLabel';
 
 import ScopesCanvas from './components/ScopesCanvas'
 import LinesCanvas from './components/LinesCanvas'
@@ -27,6 +29,8 @@ const Editor = ({ navigation, route }) => {
   const [squares, setSquares] = useState([])
   const [toggledPixels, togglePixel] = useState([])
   const [lines, setLines] = useState([])
+  const [linesIndex, setLinesIndex] = useState(0)
+  const [scopesIndex, setScopesIndex] = useState(0)
   const [scopes, setScopes] = useState([])
   const [circle, setCircle] = useState({})
   const [newLine, setNewLine] = useState(true)
@@ -44,6 +48,14 @@ const Editor = ({ navigation, route }) => {
     setSquares(_squares)
   }, [])
   const id = useMemo(() => route.params.id, [route])
+
+  useEffect(() => {
+    setLinesIndex(oldIndex => oldIndex + 1)
+  }, [lines.length])
+
+  useEffect(() => {
+    setScopesIndex(index => index + 1)
+  }, [scopes.length])
 
   function setCurrentModeHandler(mode) {
     setCurrentMode(mode)
@@ -76,8 +88,8 @@ const Editor = ({ navigation, route }) => {
 
   function createScope() {
     const newScope = {
-      id: scopes.length + 1,
-      name: 'Nouveau scope',
+      id: scopesIndex,
+      name: scopes.length + 1,
       pixels: currentScope
     }
     setScopes(oldScopes => [...oldScopes, newScope]);
@@ -98,7 +110,7 @@ const Editor = ({ navigation, route }) => {
     } else {
       const { x: endLineX, y: endLineY } = createNewLineEnd(e)
       setLines(oldLines => [...oldLines, {
-        id: lines.length + 1,
+        id: linesIndex,
         label: lines.length + 1,
         xA: newLineXY.x,
         yA: newLineXY.y,
@@ -157,19 +169,27 @@ const Editor = ({ navigation, route }) => {
    <ScrollView style={styles.container}>
      <AppHeader isBack={true} />
       <View style={[Styles.titleWrap, { marginTop: hp('4%')}]}>
-        <Text style={[Styles.titleText, Styles.fontBold]}>EDITOR</Text>
-        <Text style={Styles.titleText}>{id}</Text>
+        <Text style={[Styles.titleText, Styles.fontBold]}>EDITOR ({id})</Text>
+        <View style={styles.pickerWrap}>
+          <DropdownPicker value={currentMode} items={[
+              { label: 'Disabled Fields', value: 'pixels' },
+              { label: 'Lines', value: 'lines' },
+              { label: 'Scopes', value: 'scopes' },
+          ]} onChange={(val) => setCurrentMode(val)} />
+        </View>
 
       </View>
+
      <View style={styles.content}>
        <View style={styles.leftWrap}>
+
          <PixelsPanel
             toggledPixels={toggledPixels}
             currentMode={currentMode}
             setCurrentMode={setCurrentMode}
          />
        </View>
-       <View style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
+       <View style={{ flex: 1, marginLeft: 20 }} showsVerticalScrollIndicator={false}>
         <View style={styles.squareWrap}>
           {
             squares.map((s, index) =>
